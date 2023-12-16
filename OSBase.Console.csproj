@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>OSBase.Console</Title>
+    <Authors>nyarkus</Authors>
+    <Company>Kacianoki</Company>
+    <PackageIcon>EBLogo.png</PackageIcon>
+    <PackageTags>Eternal Beta</PackageTags>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call &quot;D:\Projects\VS\Eternal Beta\Bases\OS\OSBase.Console\bin\Release\copy.bat&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <None Include="..\..\..\EBLogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
