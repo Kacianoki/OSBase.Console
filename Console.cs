@@ -28,13 +28,7 @@ using System;
             { 
 
                 ForegroundColor = value;
-                #if WINDOWS
                 System.Console.ForegroundColor = (System.ConsoleColor)value;
-                #endif
-                #if UNITY_STANDALONE_WIN
-
-                #endif
-
             } 
         }
 
@@ -45,28 +39,22 @@ using System;
             {
                 BackgroundColor = value;
 
-                #if WINDOWS
                 System.Console.BackgroundColor = (System.ConsoleColor)value;
-                #endif
             }
         }
         public static void WriteLine(object value)
         {
-            #if WINDOWS
             System.Console.WriteLine(value);
-            #endif
         }
         public static void Write(object value)
         {
-            #if WINDOWS
             System.Console.Write(value);
-            #endif
         }
         public static void Beep()
         {
-            #if WINDOWS
             System.Console.Beep();
-            #endif
         }
+        public static string ReadLine() => System.Console.ReadLine();
+        public static ConsoleKeyInfo ReadKey() => System.Console.ReadKey();
     }
 }
